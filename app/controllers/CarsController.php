@@ -1,7 +1,7 @@
 <?php
 
 
-
+   
 class CarsController extends \BaseController {
 	
 	
@@ -11,7 +11,7 @@ class CarsController extends \BaseController {
 	public function saveCar() {
 		return Carro::saveCar();
 	}
-
+ 
 	public function getCar($id) {
 		$carro = Carro::getCarro($id);
 		if(!$carro) {
@@ -25,7 +25,7 @@ class CarsController extends \BaseController {
 		if(!$carro) {
 			return Response::json(['response' => 'Carro não encontrado'], 400);
 		}
-		return Response::json(['response' => 'Carro atualizado com sucesso!'], 200);
+		return Response::json(['response' => $carro], 200);
 	}
 
 	public function deleteCar($id) {
